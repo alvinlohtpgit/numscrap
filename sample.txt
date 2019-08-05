@@ -1,0 +1,143 @@
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="description" content="Singapore Pools 4D lottery results" />
+<meta name="keywords" content="singapore, SG 4D, 4d, toto, lottery, results" />
+<link href="style1.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="./favicon.ico"/>
+<title>SG 4D</title>
+</head>
+
+
+
+<body>
+<div class="header">
+    <!-- The logo/banner -->
+	<img src="../images/Just2us-banner-small.png" alt="Just2us">
+</div>
+
+<h3>4D Results</h3>
+
+
+	
+<table class="results4dtable">
+	<tr>
+		<td class="drawdate" colspan="6">20 Jul 1986 (Sun)</td>
+	</tr>
+
+	<tr>
+		<td colspan="6" height="12"></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td class="resulttopheader" colspan="2">1st</td>
+		<td class="results4D">9382</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="resulttopheader" colspan="2">2nd</td>
+		<td class="results4D">5267</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="resulttopheader" colspan="2">3rd</td>
+		<td class="results4D">6969</td>
+	</tr>
+	<tr>
+		<td colspan="6" height="12"></td>
+	</tr>
+
+	<tr>
+		<td class="resultssectionheader" colspan="6">Starters</td>
+	</tr>
+	<tr>
+		<td class="results4D" width="20%">0006</td>
+		<td class="results4D" width="20%">1767</td>
+		<td class="results4D" colspan="2" width="20%">2342</td>
+		<td class="results4D" width="20%">3005</td>
+		<td class="results4D" width="20%">3060</td>
+	</tr>
+
+	<tr>
+		<td class="results4D" width="20%">3322</td>
+		<td class="results4D" width="20%">3819</td>
+		<td class="results4D" colspan="2" width="20%">5938</td>
+		<td class="results4D" width="20%">9058</td>
+		<td class="results4D" width="20%">9785</td>
+	</tr>
+	<tr>
+		<td colspan="6" height="12"></td>
+	</tr>
+
+	<tr>
+		<td class="resultssectionheader" colspan="6">Consolations</td>
+	</tr>
+	<tr>
+		<td class="results4D" width="20%">0198</td>
+		<td class="results4D" width="20%">0303</td>
+		<td class="results4D" colspan="2" width="20%">1812</td>
+		<td class="results4D" width="20%">2700</td>
+		<td class="results4D" width="20%">3391</td>
+	</tr>
+
+	<tr>
+		<td class="results4D" width="20%">3532</td>
+		<td class="results4D" width="20%">4541</td>
+		<td class="results4D" colspan="2" width="20%">6101</td>
+		<td class="results4D" width="20%">6974</td>
+		<td class="results4D" width="20%">7600</td>
+	</tr>
+	<tr>
+		<td colspan="6" height="6"></td>
+	</tr>
+
+	<!-- 
+	<tr>
+		<td colspan="6" height="12"></td>
+	</tr>
+	<tr>
+		<td class="drawnumber" colspan="6">Draw Number: 2800</td>
+	</tr> -->
+
+</table>
+
+
+<p>
+	<a href="/4d/">&raquo; Latest</a><br>
+	<a href="/4d/?draw=29">&raquo; Previous</a><br>
+	<a href="/4d/?draw=31">&raquo; Next</a><br>
+</p>
+	
+
+
+
+<p>
+	    <form action="/4d/" method="get" >
+	        Draw Date (ddmmyy):<br/>
+	        <input type="text" name="date" value="" maxlength="6" />
+	        <input type="submit" value="Get Draw" name="" />
+	    </form>
+
+</p>
+
+
+
+
+
+  
+
+<div class="footer">
+	<small>
+	  &copy; 2009 Just2us. All rights reserved.<br />
+	 <a href="/4d/">Home</a> | <a href="/4d/download.jsp">Download</a> | <a href="/4d/help.jsp">Help</a> 
+	</small>
+</div>
+
+</body>
+</html>
