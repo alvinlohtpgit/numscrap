@@ -1,6 +1,7 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 const moment = require('moment');
+const {prisma} = require('./generated/prisma-client');
 
 const fetchResultFromDraw = async (drawNum) => {
     console.log('Draw Number ' + drawNum);
@@ -23,6 +24,7 @@ const parsePageContent = async(content) => {
     console.log('Parsing content ... ');
     const $ = cheerio.load(content);
 
+    var resultObj = {};
     var resultArray = [];
 
     // Get draw date
@@ -30,6 +32,7 @@ const parsePageContent = async(content) => {
     drawDate = drawDate.substr(0 , drawDate.length-5);
     let drawDateMoment = moment(drawDate , 'DD MMM YYYY');
     //console.log('Draw Date : ' + drawDateMoment.format('DD/MM/YYYY'));
+    resultObj['drawdate'] = drawDateMoment;
 
     // Get  all results
     let results = $('td.results4D');
@@ -37,10 +40,12 @@ const parsePageContent = async(content) => {
        resultArray.push($(this).html());
     });
 
-    return resultArray;
+    resultObj['resultarray'] = resultArray;
 
+    return resultObj;
 };
 
+/*
 fetchResultFromDraw(1000)
     .then(pageContent => {
         parsePageContent(pageContent)
@@ -48,3 +53,20 @@ fetchResultFromDraw(1000)
                 console.log("Results : " + resultArray.length);
             });
     });
+    */
+
+// Main function, its async so we can use await
+
+async function main(){
+    console.log('Fetching results ...');
+    var results = await fetchResultFromDraw(1000);
+    var resultObj = await parsePageContent(results);
+
+    const insertedResult = await prisma.createResult({
+        drawnumber: 1000,
+        drawdate: resultObj['drawdate'],
+        first:
+    })
+}
+
+main().catch(err => console.err('Error encountered while starting : ' + err));

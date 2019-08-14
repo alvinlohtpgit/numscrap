@@ -1,0 +1,10 @@
+type Result {
+    id: ID! @id
+    drawnumber: Int!
+    drawdate: DateTime!
+    first: String!
+    second: String!
+    third: String!
+    starters: [String!]!
+    consolations: [String!]!
+}
