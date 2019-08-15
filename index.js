@@ -1,6 +1,6 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
-const moment = require('moment');
+const moment = require('moment-timezone');
 const {prisma} = require('./generated/prisma-client');
 
 const fetchResultFromDraw = async (drawNum) => {
@@ -56,17 +56,48 @@ fetchResultFromDraw(1000)
     */
 
 // Main function, its async so we can use await
-
+/*
 async function main(){
     console.log('Fetching results ...');
     var results = await fetchResultFromDraw(1000);
     var resultObj = await parsePageContent(results);
+    var resultArray = resultObj['resultarray'];
+
+//http://sgresult.appspot.com/4d/
+    console.log('Draw Date : ' + moment(resultObj['drawdate']).format('DD MM YYYY'));
+
+    var starterSet = [];
+    for(var i = 3; i < 13 ; i++){
+        starterSet.push(resultArray[i]);
+    }
+
+    var consolationSet = [];
+    for(var i = 13 ; i < 23 ; i++){
+        consolationSet.push(resultArray[i]);
+    }
 
     const insertedResult = await prisma.createResult({
         drawnumber: 1000,
         drawdate: resultObj['drawdate'],
-        first:
-    })
-}
+        first: resultArray[0],
+        second: resultArray[1],
+        third: resultArray[2],
+        starters: {
+           set: starterSet
+        },
+        consolations: {
+            set: consolationSet
+        }
+    });
+    console.log(insertedResult);
 
-main().catch(err => console.err('Error encountered while starting : ' + err));
+}
+*/
+
+async function main(){
+    var draws = await prisma.results();
+    console.log("Draw Date " + draws[0].drawdate);
+    //console.log(draws);
+    console.log("Converted : " + moment(draws[0].drawdate).tz('Asia/Singapore').format('DD MM YYYY'));
+}
+main().catch(err => console.error('Error encountered while starting : ' + err));
